@@ -9,5 +9,4 @@ def computeMeanPixelFrom(images):
         img = cv2.imread(images[i])
         mean = np.mean(img, axis=(0,1))
         means[i] = mean
-    return np.mean(means, axis=0)
-    
+    return np.mean(means, axis=0)/255.0

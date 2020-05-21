@@ -1,9 +1,12 @@
-import torch
-import numpy as np
-import cv2
+def computeMeanPixelFrom(images):
+    sumPixel = np.array([0,0,0])
+    means = np.zeros((len(images), 3))
+    for i in range(len(images)):
+        img = cv2.imread(images[i])
+        mean = np.mean(img, axis=(0,1))
+        means[i] = mean
+    return np.mean(means, axis=0)/255.0
 
-SETTINGS = {
-learningRate: 0.001,
-trainingFolder: "../../data",
-batchSize = 16
-}
+class vgg19:
+    def __init__():
+        pass
